@@ -1,13 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Website Title</title>
+    <title>Your Page Title</title>
+    <!-- Include the Font Awesome stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        /* Basic page styles */
+        body {
+            background-color: white;
+            color: black;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .content {
+            text-align: center;
+        }
+
+        /* Email styles */
+        .email-link {
+            background-color: black;
+            padding: 5px 10px;
+            color: white;
+            display: inline-block;
+            margin: 10px 0;
+        }
+
+        .email-link span {
+            color: #FF69B4; /* candy-pink using a HEX approximation */
+        }
+
+        /* Social icons with links */
+        .social-icons a {
+            color: #FF69B4; /* candy-pink using a HEX approximation */
+            margin: 0 10px;
+            font-size: 24px;
+            text-decoration: none;
+        }
+    </style>
 </head>
+
 <body>
-    <div class="container">
-        <div class="email">Email: <a href="mailto:grow@esycrux.com">grow@esycrux.com</a></div>
+    <div class="content">
+        <h1>Reach your potential</h1>
+        <a class="email-link" href="mailto:grow@esycrux.com">
+            grow<span>@</span>esycrux<span>.</span>com
+        </a>
+        <div class="social-icons">
+            <!-- Font Awesome icons for social links -->
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        </div>
     </div>
 </body>
+
 </html>
+
