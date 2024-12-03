@@ -39,25 +39,18 @@
             text-decoration: none;
             font-weight: 400; /* Medium weight for better readability */
             display: inline-flex;
-            align-items: center; /* Align icon and text on the same level */
+            align-items: center;
             gap: 5px; /* Space between icon and text */
         }
 
         .phone-number i {
             color: #25D366; /* WhatsApp green */
             font-size: 1.2em;
+            vertical-align: middle; /* Align the icon with the text baseline */
         }
 
         .phone-number:hover {
             text-decoration: underline;
-        }
-
-        .signature {
-            display: block;
-            margin-top: 10px;
-            font-size: 0.9em;
-            font-weight: 400;
-            color: black;
         }
     </style>
 </head>
@@ -72,13 +65,7 @@
         // Function to add the additional message after 1 minute (60,000 milliseconds)
         setTimeout(() => {
             const messageContainer = document.getElementById('additional-message-container');
-            messageContainer.innerHTML = `
-                Still here? So drop me a message on 
-                <a class="phone-number" href="https://wa.me/420607980560" target="_blank">
-                    <i class="fab fa-whatsapp"></i> +420 607 980 560
-                </a>.
-                <span class="signature">Esy</span>
-            `;
+            messageContainer.innerHTML = 'Still here? So drop me a message on <a class="phone-number" href="https://wa.me/420607980560" target="_blank"><i class="fab fa-whatsapp"></i> +420 607 980 560</a>.';
             messageContainer.className = 'additional-message';
         }, 60000); // 1 minute in milliseconds
     </script>
