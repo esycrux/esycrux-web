@@ -5,11 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Page Title</title>
-    <!-- Include the Font Awesome stylesheet -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
     <style>
-        /* Basic page styles */
         body {
             background-color: white;
             color: black;
@@ -18,45 +14,38 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            flex-direction: column;
-        }
-
-        .content {
             text-align: center;
-            margin-bottom: 50px; /* Increased margin for more space between content and icons */
         }
 
         h1 {
-            margin-bottom: 5px;
             font-size: 2.5em;
+            margin-bottom: 20px;
         }
 
-        /* Email styles */
-        .email-link {
+        a.phone-number {
             color: black;
-            font-size: 2.2em;
-            display: inline-block;
-            white-space: nowrap;
-        }
-
-        .email-link span {
-            color: black;
-        }
-
-        /* Social icons with links */
-        .social-icons a {
-            color: black;
-            margin: 0 10px;
-            font-size: 24px;
+            font-size: 1.5em;
             text-decoration: none;
+        }
+
+        a.phone-number:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 
 <body>
     <div class="content">
-        <h1>You know what to do...</h1>
+        <h1 id="message">You know what to do...</h1>
     </div>
+
+    <script>
+        // Function to change the text after 5 minutes (300000 milliseconds)
+        setTimeout(() => {
+            const messageElement = document.getElementById('message');
+            messageElement.innerHTML = 'Still here? So drop me a message on <a class="phone-number" href="tel:+420607980560">+420 607 980 560</a> and we can do something about it.';
+        }, 300000); // 5 minutes in milliseconds
+    </script>
 </body>
 
 </html>
