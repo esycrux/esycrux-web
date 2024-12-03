@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Page Title</title>
+    <title>Esy Crux Nidrle</title>
     <style>
         body {
             background-color: white;
@@ -40,11 +40,24 @@
     </div>
 
     <script>
-        // Function to change the text after 5 minutes (300000 milliseconds)
+        console.log("Page loaded. Timer started for 1 minute.");
+
+        // Function to change the text after 1 minute (60,000 milliseconds)
         setTimeout(() => {
+            console.log("Timer finished. Updating message.");
             const messageElement = document.getElementById('message');
-            messageElement.innerHTML = 'Still here? So drop me a message on <a class="phone-number" href="tel:+420607980560">+420 607 980 560</a> and we can do something about it.';
-        }, 300000); // 5 minutes in milliseconds
+            messageElement.innerHTML = 'Still here? So drop me a message on <a class="phone-number" href="tel:+420607980560">+420 607 980 560</a> and we can do something about it. <br><strong>Esy</strong>';
+            console.log("Message updated successfully.");
+        }, 60000); // 1 minute in milliseconds
+
+        // Debugging info for user interactions
+        document.addEventListener("visibilitychange", () => {
+            if (document.visibilityState === "hidden") {
+                console.log("User left the page or switched tabs.");
+            } else {
+                console.log("User returned to the page.");
+            }
+        });
     </script>
 </body>
 
