@@ -5,11 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Esy Crux Nidrle</title>
+    <!-- Link to Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         body {
             background-color: white;
             color: black;
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', Arial, sans-serif; /* Modern font */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -20,17 +22,20 @@
         h1 {
             font-size: 2.5em;
             margin-bottom: 20px;
+            font-weight: 600;
         }
 
         .additional-message {
             font-size: 1em;
             color: black;
             margin-top: 10px;
+            font-weight: 300; /* Lighter weight for additional text */
         }
 
         .phone-number {
             color: black;
             text-decoration: none;
+            font-weight: 400; /* Medium weight for better readability */
         }
 
         .phone-number:hover {
@@ -46,25 +51,12 @@
     </div>
 
     <script>
-        console.log("Page loaded. Timer started for 1 minute.");
-
         // Function to add the additional message after 1 minute (60,000 milliseconds)
         setTimeout(() => {
-            console.log("Timer finished. Adding additional message.");
             const messageContainer = document.getElementById('additional-message-container');
             messageContainer.innerHTML = 'Still here? So drop me a message on <a class="phone-number" href="https://wa.me/420607980560" target="_blank">+420 607 980 560</a>.';
             messageContainer.className = 'additional-message';
-            console.log("Additional message added successfully.");
         }, 60000); // 1 minute in milliseconds
-
-        // Debugging info for user interactions
-        document.addEventListener("visibilitychange", () => {
-            if (document.visibilityState === "hidden") {
-                console.log("User left the page or switched tabs.");
-            } else {
-                console.log("User returned to the page.");
-            }
-        });
     </script>
 </body>
 
