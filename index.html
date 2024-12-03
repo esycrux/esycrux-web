@@ -6,12 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Esy Crux Nidrle</title>
     <!-- Link to Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- Link to Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
         body {
             background-color: white;
             color: black;
-            font-family: 'Poppins', Arial, sans-serif; /* Modern font */
+            font-family: 'Roboto', Arial, sans-serif; /* Modern Google-like font */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -22,7 +24,7 @@
         h1 {
             font-size: 2.5em;
             margin-bottom: 20px;
-            font-weight: 600;
+            font-weight: 500;
         }
 
         .additional-message {
@@ -36,6 +38,14 @@
             color: black;
             text-decoration: none;
             font-weight: 400; /* Medium weight for better readability */
+            display: inline-flex;
+            align-items: center;
+            gap: 5px; /* Space between icon and text */
+        }
+
+        .phone-number i {
+            color: #25D366; /* WhatsApp green */
+            font-size: 1.2em;
         }
 
         .phone-number:hover {
@@ -54,7 +64,7 @@
         // Function to add the additional message after 1 minute (60,000 milliseconds)
         setTimeout(() => {
             const messageContainer = document.getElementById('additional-message-container');
-            messageContainer.innerHTML = 'Still here? So drop me a message on <a class="phone-number" href="https://wa.me/420607980560" target="_blank">+420 607 980 560</a>.';
+            messageContainer.innerHTML = 'Still here? So drop me a message on <a class="phone-number" href="https://wa.me/420607980560" target="_blank"><i class="fab fa-whatsapp"></i> +420 607 980 560</a>.';
             messageContainer.className = 'additional-message';
         }, 60000); // 1 minute in milliseconds
     </script>
