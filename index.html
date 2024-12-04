@@ -62,12 +62,48 @@
     </div>
 
     <script>
-        // Function to add the additional message after 1 minute (60,000 milliseconds)
-        setTimeout(() => {
-            const messageContainer = document.getElementById('additional-message-container');
-            messageContainer.innerHTML = 'Still here? So drop me a message on <a class="phone-number" href="https://wa.me/420607980560" target="_blank"><i class="fab fa-whatsapp"></i> +420 607 980 560</a>. Esy';
+        // Check reload count and timestamp from localStorage
+        let reloadCount = localStorage.getItem('reloadCount');
+        let firstVisitTimestamp = localStorage.getItem('firstVisitTimestamp');
+
+        // Initialize reloadCount and timestamp if not present
+        if (!reloadCount) {
+            reloadCount = 0;
+            firstVisitTimestamp = Date.now();
+            localStorage.setItem('reloadCount', reloadCount);
+            localStorage.setItem('firstVisitTimestamp', firstVisitTimestamp);
+        } else {
+            reloadCount = parseInt(reloadCount);
+            firstVisitTimestamp = parseInt(firstVisitTimestamp);
+        }
+
+        // Increment reload count and update timestamp
+        reloadCount++;
+        localStorage.setItem('reloadCount', reloadCount);
+
+        // Reset reload count if more than 5 minutes have passed
+        const timeElapsed = Date.now() - firstVisitTimestamp;
+        if (timeElapsed > 300000) { // 5 minutes in milliseconds
+            reloadCount = 1; // Reset to 1 for this visit
+            firstVisitTimestamp = Date.now();
+            localStorage.setItem('reloadCount', reloadCount);
+            localStorage.setItem('firstVisitTimestamp', firstVisitTimestamp);
+        }
+
+        const messageContainer = document.getElementById('additional-message-container');
+
+        // Show the message logic
+        if (reloadCount >= 3) {
+            // Show perseverance message after 3 reloads within a few minutes
+            messageContainer.innerHTML = `You keep trying, I love the perseverance. We can make things happen. Drop me a message on <a class="phone-number" href="https://wa.me/420607980560" target="_blank"><i class="fab fa-whatsapp"></i> +420 607 980 560</a>.`;
             messageContainer.className = 'additional-message';
-        }, 60000); // 1 minute in milliseconds
+        } else {
+            // Default behavior: Show the message after 1 minute
+            setTimeout(() => {
+                messageContainer.innerHTML = `Still here? So drop me a message on <a class="phone-number" href="https://wa.me/420607980560" target="_blank"><i class="fab fa-whatsapp"></i> +420 607 980 560</a>.`;
+                messageContainer.className = 'additional-message';
+            }, 60000); // 1 minute in milliseconds
+        }
     </script>
 </body>
 
